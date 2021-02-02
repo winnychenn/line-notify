@@ -1,0 +1,12 @@
+version: '3.1'
+
+services:
+  trainning:
+    container_name: trainning
+    image: infominer.azurecr.io/trainning:v${version}
+    networks:
+      - prometheus_back-tier
+    restart: always
+networks:  
+  prometheus_back-tier:
+    external: true
